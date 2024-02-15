@@ -2,7 +2,7 @@ const express = require("express")
 const uuid = require("uuid")
 
 const app = express()
-const port = 3000;
+const port = 3000
 
 app.use(express.json())
 
@@ -57,14 +57,13 @@ app.delete("/orders/cancel/:id", checkId, showMethod, (req, res) => {
 
 app.get("/orders/filter/:id", checkId, showMethod, (req, res) => {
   const index =  req.orderIndex
-  return res.json(orders[index]);
+  return res.json(orders[index])
 })
 
 app.patch("/orders/status/:id", checkId, showMethod, (req, res) => {
   const index = req.orderIndex
-  // const { status } = req.body
   orders[index].status = "Pronto"
   return res.json(orders[index])
 })
 
-app.listen(port, () => console.log(`🌐 Server started on port ${port}`));
+app.listen(port, () => console.log(`🌐 Server started on port ${port}`))
