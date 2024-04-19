@@ -12,7 +12,6 @@ const orders = []
 
 const checkId = (req, res, next) => {
   const { id } = req.params
-  // console.log(id)
   const index = orders.findIndex(p => p.id === id)
   req.orderIndex = index
   req.orderId = id
@@ -27,7 +26,7 @@ const showMethod = (req, res, next) => {
   const {url} = req
   console.log(`
   request method: ${method}
-  request url: http://localhost:${port}${url}
+  request url: ${url}
   `)
   next()
 }
